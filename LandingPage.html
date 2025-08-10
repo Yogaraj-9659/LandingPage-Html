@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Webpage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=YourFontNameHere">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #fffaf6;
+            color: #222;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ul li {
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .auth-buttons a {
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        .auth-buttons .login {
+            color: #ff6a00;
+        }
+
+        .auth-buttons .signup {
+            background-color: #ff6a00;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 80px;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            font-family: 'Merriweather', serif;
+        }
+
+        .hero-text h1 span {
+            color: #ff6a00;
+        }
+
+        .hero-text p {
+            margin: 20px 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .hero-text .btn-discover {
+            display: inline-block;
+            padding: 12px 24px;
+            border: 2px solid #ff6a00;
+            color: #ff6a00;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 820px;
+            border-radius: 50%;
+            padding: 20px;
+        }
+
+        .badge {
+            position: absolute;
+            background: #fff;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge-award {
+            top: 20px;
+            right: -40px;
+        }
+
+        .badge-explore {
+            bottom: 40px;
+            right: -50px;
+        }
+
+        .badge-review {
+            bottom: -30px;
+            left: 50px;
+        }
+
+        .search-box {
+            background: #fff;
+            padding: 20px 40px;
+            margin: 40px auto;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .search-item {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .search-item text {
+            font-size: 18px;
+            color: #252424;
+        }
+
+        .search-item p {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .btn-explore {
+            background-color: #ff6a00;
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .things-section {
+            background-color: #f9fafc;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Merriweather', serif;
+        }
+
+        .things-section .section-title {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .things-section .section-title span {
+            color: #ff6a00;
+        }
+
+        .things-section .section-subtitle {
+            max-width: 600px;
+            margin: 10px auto 40px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .things-cards {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .thing-card {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            max-width: 300px;
+            text-align: left;
+            position: relative;
+        }
+
+        .thing-card .icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .thing-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .thing-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .subtitle-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .deals-section {
+            padding: 80px 0;
+            text-align: center;
+            background: #fff;
+        }
+
+        .deals-section .section-title {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .deals-section .section-title span {
+            color: #ff6a00;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .deals-cards {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .deal-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            max-width: 260px;
+            width: 100%;
+            position: relative;
+        }
+
+        .deal-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: filter 0.3s ease;
+        }
+
+        .deal-card:hover img {
+            filter: blur(3px) brightness(0.9);
+        }
+
+        .book-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ff6a00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .deal-card:hover .book-btn {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .card-body {
+            background: #fff;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .card-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .rating {
+            font-size: 14px;
+            color: #ffb400;
+            margin-bottom: 6px;
+        }
+
+        .location {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 14px;
+        }
+
+        .price .old {
+            text-decoration: line-through;
+            color: #aaa;
+            margin-right: 5px;
+        }
+
+        .price .new {
+            background: #ffece0;
+            color: #ff6a00;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .nav-arrows {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .arrow {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: #eee;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .nav-arrows-Vacation {
+            margin-top: 40px;
+            display: flex;
+            justify-content: end;
+            gap: 25px;
+            margin-right: 115px;
+        }
+
+        .arrow-Vacation {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: #eee;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .arrow.active {
+            background: #ff6a00;
+            color: #fff;
+        }
+
+        .BookingContentTop {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .BookingContentBottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .vacation-cards {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            padding: 40px 0;
+        }
+
+        .vacation-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            width: 300px;
+        }
+
+        .vacation-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .vacation-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: fill;
+        }
+
+        .vacation-info {
+            padding: 15px;
+        }
+
+        .title-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-price h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 16px;
+            color: #ff6600;
+        }
+
+        .details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .rating {
+            color: #ffb400;
+        }
+
+        .rating i {
+            color: gold;
+            font-size: 14px;
+        }
+
+        .containerVacation {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .testimonials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 10%;
+            background: #f9fafc;
+            gap: 50px;
+        }
+
+        .testimonial-text {
+            max-width: 400px;
+        }
+
+        .testimonial-text h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .testimonial-text h2 span {
+            color: #f76b1c;
+        }
+
+        .testimonial-text p {
+            color: #666;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .testimonial-nav {
+            margin-top: 20px;
+        }
+
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn.next {
+            background: #f76b1c;
+            color: #fff;
+            border: none;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .testimonial-card {
+            position: relative;
+            z-index: 2;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .testimonial-card:nth-child(2) {
+            position: absolute;
+            transform: translate(20px, -136px);
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .profile-pic {
+            position: absolute;
+            top: -30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .profile-pic img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+        }
+
+        .testimonial-content {
+            margin-top: 20px;
+        }
+
+        .quote {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+            color: #222;
+        }
+
+        .location {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .testimonial-card-Background {
+            background: url('Content2.png') no-repeat center center/cover;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 350px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-content-Background .quote {
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-content-Background h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .testimonial-content-Background .location {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .latest-blog {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+        }
+
+        .latest-blog h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .latest-blog h2 span {
+            color: #ff7a1a;
+        }
+
+        .blog-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .blog-card {
+            width: 250px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: fill;
+        }
+
+        .blog-card text {
+            font-size: 16px;
+
+        }
+
+        .blog-card .date {
+            font-size: 0.85rem;
+            color: gray;
+            margin: 10px 0px 15px;
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 30px;
+        }
+
+        .dots span {
+            width: 8px;
+            height: 8px;
+            background: #b1b0b0;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dots .orange {
+            background: #ff6a00;
+        }
+
+        .containerSubscribe {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .subscribe-section {
+            background: url('Assests/Subscribe.png') no-repeat center center/contain;
+            border-radius: 20px;
+            padding: 115px 20px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .subscribe-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .subscribe-section h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            line-height: 1.4;
+        }
+
+        .subscribe-form {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            width: fit-content;
+        }
+
+        .input-container {
+            position: relative;
+            width: 350px;
+        }
+
+        .input-container i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 16px;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 10px 12px 10px 40px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .input-container input:focus {
+            border-color: #666;
+        }
+
+
+        .input-container .icon {
+            color: #999;
+            font-size: 18px;
+            margin-right: 8px;
+        }
+
+        .subscribe-form input {
+            border: none;
+            outline: none;
+            font-size: 14px;
+            padding: 12px 36px;
+            flex: 1;
+            color: #333;
+        }
+
+        .subscribe-form input::placeholder {
+            color: #aaa;
+        }
+
+        .subscribe-form button {
+            background-color: #FA7D3C;
+            border: none;
+            color: white;
+            padding: 9px 24px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background 0.3s;
+
+        }
+
+        .subscribe-form button:hover {
+            background-color: #e86f2e;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 40px 60px;
+            background-color: #f8f9fc;
+            gap: 20px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-column h4 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-column p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 6px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .footer-column ul li a:hover {
+            color: #f97316;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .social-icons a.orange {
+            background: #f97316;
+            color: white;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fc;
+            padding: 10px 60px;
+            font-size: 13px;
+            border-top: 1px solid #ddd;
+            color: #777;
+        }
+
+        .footer-bottom a {
+            text-decoration: none;
+            color: #777;
+        }
+
+        .footer-bottom a:hover {
+            color: #f97316;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 20px;
+            color: rgb(46, 46, 46);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 50%;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: #f97316;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+
+            <div class="logo"
+                style="font-family: 'YourFontNameHere', serif; display: flex; align-items: center; gap: 6px;">
+                Trabook
+                <img src="Assests/Logo.png" alt="Logo Icon" style="height: 1em;">
+            </div>
+
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Destination</li>
+                    <li>Tour</li>
+                    <li>Blog</li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="login">Login</a>
+                <a href="#" class="signup">Sign up</a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Get started your exciting <span>journey</span> with us.</h1>
+                <p>A Team of experienced tourism professionals will provide you with the best advice and tips for your
+                    desire place.</p>
+                <a href="#" class="btn-discover">Discover Now</a>
+            </div>
+            <div class="hero-image">
+                <img src="Assests/Image.png" alt="Traveler">
+            </div>
+        </section>
+
+        <div class="search-box">
+            <div class="search-item">
+                <text>Location <i class="fa-solid fa-caret-down" style="color: #FA7436;"></i></text>
+                <p>Where are you going</p>
+            </div>
+            <div class="search-item">
+                <text>Date <i class="fa-solid fa-caret-down" style="color: #FA7436;"></i></i></text>
+                <p>When you will go</p>
+            </div>
+            <div class="search-item">
+                <text>Guest <i class="fa-solid fa-caret-down" style="color: #FA7436;"></i></i></text>
+                <p>Number of guest</p>
+            </div>
+            <button class="btn-explore">Explore Now</button>
+        </div>
+        
+
+        <section class="things-section">
+            <div class="container">
+                <h2 class="section-title">Things you need <span>to do</span></h2>
+                <div class="subtitle-wrapper">
+                    <p class="section-subtitle">
+                        We ensure that you’ll embark on a perfectly planned, safe vacation at a price you can afford.
+                    </p>
+                    <div class="icon">
+                        <img src="Assests/Element.png" alt="Card Map" style="width: 150px; height: 85px;">
+                    </div>
+                </div>
+
+
+                <div class="things-cards">
+                    <div class="thing-card">
+                        <div class="icon">
+                            <img src="Assests/Document.png" alt="Card Document" style="width: 32px; height: 32px;">
+                        </div>
+                        <h3>Sign Up</h3>
+                        <p>Completes all the work associated with planning and processing</p>
+                    </div>
+                    <div class="thing-card">
+                        <div class="icon">
+                            <img src="Assests/Map.png" alt="Card Map" style="width: 32px; height: 40px;">
+                        </div>
+                        <h3>Worth of Money</h3>
+                        <p>After successful access then book from exclusive deals &amp; pricing</p>
+                    </div>
+                    <div class="thing-card">
+                        <div class="icon">
+                            <img src="Assests/Purse.png" alt="Card Purse" style="width: 32px; height: 32px;">
+                        </div>
+                        <h3>Exciting Travel</h3>
+                        <p>Start and explore a wide range of exciting travel experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="deals-section">
+            <div class="container">
+                <h2 class="section-title">Exclusive <span>deals & discounts</span></h2>
+                <p class="section-subtitle">
+                    Discover our fantastic early booking discounts <br>
+                    &amp; start planning your journey.
+                </p>
+
+                <div class="deals-cards">
+                    <div class="deal-card">
+                        <img src="Assests/Booking1.png" alt="Madrid">
+                        <button class="book-btn">Book Now</button>
+                        <div class="card-body">
+                            <div class="BookingContentTop">
+                                <h3>Madrid</h3>
+                                <div class="rating">
+                                    <span class="star">
+                                        <i class="fa-solid fa-star"></i>
+                                    </span> 4.8
+                                </div>
+                            </div>
+                            <div class="BookingContentBottom">
+                                <div class="location">
+                                    <i class="fa-solid fa-location-dot"></i> Spain
+                                </div>
+                                <div class="price">
+                                    <span class="old">$950</span>
+                                    <span class="new">$850</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="deal-card">
+                        <img src="Assests/Booking2.png" alt="Firenze">
+                        <button class="book-btn">Book Now</button>
+                        <div class="card-body">
+                            <div class="BookingContentTop">
+                                <h3>Firenze</h3>
+                                <div class="rating">
+                                    <span class="star">
+                                        <i class="fa-solid fa-star"></i>
+                                    </span> 4.5
+                                </div>
+                            </div>
+                            <div class="BookingContentBottom">
+                                <div class="location">
+                                    <i class="fa-solid fa-location-dot"></i> Italy
+                                </div>
+                                <div class="price">
+                                    <span class="old">$850</span>
+                                    <span class="new">$750</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="deal-card">
+                        <img src="Assests/Booking3.png" alt="Paris">
+                        <button class="book-btn">Book Now</button>
+                        <div class="card-body">
+                            <div class="BookingContentTop">
+                                <h3>Paris</h3>
+                                <div class="rating">
+                                    <span class="star">
+                                        <i class="fa-solid fa-star"></i>
+                                    </span> 4.4
+                                </div>
+                            </div>
+                            <div class="BookingContentBottom">
+                                <div class="location">
+                                    <i class="fa-solid fa-location-dot"></i> France
+                                </div>
+                                <div class="price">
+                                    <span class="old">$699</span>
+                                    <span class="new">$599</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="deal-card">
+                        <img src="Assests/Booking4.png" alt="London">
+                        <button class="book-btn">Book Now</button>
+                        <div class="card-body">
+                            <div class="BookingContentTop">
+                                <h3>London</h3>
+                                <div class="rating">
+                                    <span class="star">
+                                        <i class="fa-solid fa-star"></i>
+                                    </span> 4.8
+                                </div>
+                            </div>
+                            <div class="BookingContentBottom">
+                                <div class="location">
+                                    <i class="fa-solid fa-location-dot"></i> UK
+                                </div>
+                                <div class="price">
+                                    <span class="old">$850</span>
+                                    <span class="new">$850</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-arrows">
+                    <button class="arrow">
+                        <i class="fas fa-arrow-left"></i></button>
+                    <button class="arrow active">
+                        <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="things-section">
+            <div class="container">
+                <h2 class="section-title">Best <span>vacation plan</span></h2>
+                <div class="subtitle-wrapper">
+                    <p class="section-subtitle">
+                        Plan your perfect vacation with our travel agency. Choose among hundreds of all-inclusive
+                        offers!
+                    </p>
+                    <div class="icon">
+                        <img src="Assests/Palm.png" alt="Card Map" style="width: 100px; height: 80px;">
+                    </div>
+                </div>
+                <div class="containerVacation">
+                    <div class="nav-arrows-Vacation" style="right: 10px;">
+                        <button class="arrow-Vacation">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button class="arrow active">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="vacation-cards">
+                        <div class="vacation-card">
+                            <img src="Assests/Vacation1.jpg" alt="Rome, Italy">
+                            <div class="vacation-info">
+                                <div class="title-price">
+                                    <h3>Rome, Italy</h3>
+                                    <span class="price">$5,42k</span>
+                                </div>
+                                <div class="details">
+                                    <span class="trip-days">✈️ 10 Days Trip</span>
+                                    <span class="rating">
+                                        <i class="fa-solid fa-star"></i> 4.8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="vacation-card">
+                            <img src="Assests/Vacation2.png" alt="London, UK">
+                            <div class="vacation-info">
+                                <div class="title-price">
+                                    <h3>London, UK</h3>
+                                    <span class="price">$2,42k</span>
+                                </div>
+                                <div class="details">
+                                    <span class="trip-days">✈️ 07 Days Trip</span>
+                                    <span class="rating">
+                                        <i class="fa-solid fa-star"></i> 4.7</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="vacation-card">
+                            <img src="Assests/Vacation3.png" alt="Osaka, Japan">
+                            <div class="vacation-info">
+                                <div class="title-price">
+                                    <h3>Osaka, Japan</h3>
+                                    <span class="price">$5,42k</span>
+                                </div>
+                                <div class="details">
+                                    <span class="trip-days">✈️ 10 Days Trip</span>
+                                    <span class="rating">
+                                        <i class="fa-solid fa-star"></i> 4.8</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="testimonial-text">
+                <h2>What people say <span>about us.</span></h2>
+                <p>Our Clients send us bunch of smilies with our services and we love them.</p>
+                <div class="testimonial-nav">
+                    <button class="nav-btn prev">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="nav-btn next">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="testimonial-wrapper">
+                <div class="testimonial-card">
+                    <div class="profile-pic">
+                        <img src="Assests/User.png" alt="Mike Taylor">
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="quote">
+                            “On the Windows talking painted pasture yet its express parties use.
+                            Sure last upon he same as knew next. Of believed or diverted no.”
+                        </p>
+                        <h4>Mike taylor</h4>
+                        <span class="location">Lahore, Pakistan</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content-Background">
+                        <p class="quote-Background">
+                            “On the Windows talking painted pasture yet its express parties use.
+                            Sure last upon he same as knew next. Of believed or diverted no.”
+                        </p>
+                        <h4>Chris Thomas</h4>
+                        <span class="location-Background">CEO of Red Button</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="latest-blog">
+            <h2 class="section-title">Get update with <span>latest blog</span></h2>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <img src="Assests/blog1.png" alt="Blog 1">
+                    <text>The Amazing Difference a Year of Travelling.</text>
+                    <p class="date">July 27, 2021</p>
+                </div>
+
+                <div class="blog-card">
+                    <img src="Assests/blog2.png" alt="Blog 2">
+                    <text>Travel far enough, you meet yourself.</text>
+                    <p class="date">July 27, 2021</p>
+                </div>
+
+                <div class="blog-card">
+                    <img src="Assests/blog3.png" alt="Blog 3">
+                    <text>How to Save Money While Visiting Africa.</text>
+                    <p class="date">July 27, 2021</p>
+                </div>
+
+                <div class="blog-card">
+                    <img src="Assests/blog4.png" alt="Blog 4">
+                    <text>Reflections on 5 Months of Travel: Time to Hang</text>
+                    <p class="date">July 27, 2021</p>
+                </div>
+            </div>
+            <div class="dots">
+                <span></span>
+                <span class="orange"></span>
+                <span></span>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="containerSubscribe">
+                <div class="subscribe-section">
+                    <div class="subscribe-content">
+                        <h2 class="section-title">Subscribe and get exclusive<br>deals & offers</h2>
+                        <form class="subscribe-form">
+                            <div class="input-container">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" placeholder="Enter your email" required>
+                            </div>
+
+                            <button type="submit">Subscribe</button>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="footer-main">
+                    <div class="footer-column brand">
+                        <h3 style="font-family: 'YourFontNameHere', serif;">
+                            Trabook
+                            <img src="Assests/Logo.png" alt="Logo" style="height: 1em; vertical-align: middle;">
+                        </h3>
+
+                        <p>Book your trip in minute, get full<br>Control for much longer.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Logistic</a></li>
+                            <li><a href="#">Privacy & Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="#">Help/FAQ</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Affiliates</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>More</h4>
+                        <ul>
+                            <li><a href="#">Press Centre</a></li>
+                            <li><a href="#">Our Blog</a></li>
+                            <li><a href="#">Low fare tips</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>Copyright, Trabook 2022. All rights reserved.</p>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
