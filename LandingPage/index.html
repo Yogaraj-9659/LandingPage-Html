@@ -99,6 +99,8 @@
             text-decoration: none;
             font-weight: 500;
             margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         .hero-image {
@@ -142,7 +144,7 @@
             background: #fff;
             padding: 20px 40px;
             margin: 40px auto;
-            width: 80%;
+            width: 60%;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -150,19 +152,54 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
         .search-item {
             flex: 1;
             padding: 0 20px;
+            cursor: pointer;
         }
 
-        .search-item text {
+        .search-item .label {
             font-size: 18px;
             color: #252424;
+            font-weight: 600;
         }
 
         .search-item p {
             font-size: 12px;
             color: #999;
+            margin: 4px 0 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            padding: 8px 0;
+            z-index: 10;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         .btn-explore {
@@ -534,14 +571,14 @@
             transition: all 0.3s ease;
         }
 
-        .nav-btn.next {
-            background: #f76b1c;
+        /* .nav-btn.next {
             color: #fff;
             border: none;
-        }
+        } */
 
         .nav-btn:hover {
             transform: scale(1.1);
+            background: #f76b1c;
         }
 
         .testimonial-card {
@@ -949,28 +986,53 @@
         </section>
 
         <div class="search-box">
-            <div class="search-item">
-                <text>Location <i class="fa-solid fa-caret-down" style="color: #FA7436;"></i></text>
-                <p>Where are you going</p>
+            <div class="dropdown">
+                <div class="search-item dropbtn">
+                    <span class="label">Location <i class="fa-solid fa-caret-down" style="color: #FA7436;"></i></span>
+                    <p>Where are you going</p>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#">New York</a>
+                    <a href="#">London</a>
+                    <a href="#">Paris</a>
+                </div>
             </div>
-            <div class="search-item">
-                <text>Date <i class="fa-solid fa-caret-down" style="color: #FA7436;"></i></i></text>
-                <p>When you will go</p>
+
+            <div class="dropdown">
+                <div class="search-item dropbtn">
+                    <span class="label">Date <i class="fa-solid fa-caret-down" style="color: #FA7436;"></i></span>
+                    <p>When you will go</p>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#">Jan 2025</a>
+                    <a href="#">Feb 2025</a>
+                    <a href="#">Mar 2025</a>
+                </div>
             </div>
-            <div class="search-item">
-                <text>Guest <i class="fa-solid fa-caret-down" style="color: #FA7436;"></i></i></text>
-                <p>Number of guest</p>
+
+            <div class="dropdown">
+                <div class="search-item dropbtn">
+                    <span class="label">Guest <i class="fa-solid fa-caret-down" style="color: #FA7436;"></i></span>
+                    <p>Number of guest</p>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#">1 Guest</a>
+                    <a href="#">2 Guests</a>
+                    <a href="#">3+ Guests</a>
+                </div>
             </div>
-            <button class="btn-explore">Explore Now</button>
+
+            <button class="btn-explore" href="#">Explore Now</button>
         </div>
-        
+
 
         <section class="things-section">
             <div class="container">
                 <h2 class="section-title">Things you need <span>to do</span></h2>
                 <div class="subtitle-wrapper">
                     <p class="section-subtitle">
-                        We ensure that you’ll embark on a perfectly planned, safe vacation at a price you can afford.
+                        We ensure that you’ll embark on a perfectly planned, safe vacation at a price you can
+                        afford.
                     </p>
                     <div class="icon">
                         <img src="Assests/Element.png" alt="Card Map" style="width: 150px; height: 85px;">
@@ -1112,10 +1174,14 @@
                 </div>
 
                 <div class="nav-arrows">
-                    <button class="arrow">
-                        <i class="fas fa-arrow-left"></i></button>
-                    <button class="arrow active">
-                        <i class="fas fa-arrow-right"></i></button>
+                    <div class="testimonial-nav">
+                        <button class="nav-btn prev">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button class="nav-btn next">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1134,12 +1200,14 @@
                 </div>
                 <div class="containerVacation">
                     <div class="nav-arrows-Vacation" style="right: 10px;">
-                        <button class="arrow-Vacation">
-                            <i class="fas fa-arrow-left"></i>
-                        </button>
-                        <button class="arrow active">
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
+                        <div class="testimonial-nav">
+                            <button class="nav-btn prev">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <button class="nav-btn next">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="vacation-cards">
                         <div class="vacation-card">
